@@ -16,15 +16,16 @@ expressApp.use(express.json());
 expressApp.use(express.text());
 expressApp.use(express.urlencoded({extended: true}));
 
-expressApp.use("/", (req, res) => {
-    res.send("Rapimoney web services")
-})
+
 
 expressApp.use("/client", clientRouter);
 
 expressApp.use("/login", loginRouter);
 
+expressApp.use("/", (req, res) => {
+    res.send("Rapimoney web services")
+})
 
 expressApp.listen(PORT, () =>
-  console.log(`Web service on localhost:${PORT}`)
+  console.log(`Web service running on http://localhost:${PORT}`)
 );
