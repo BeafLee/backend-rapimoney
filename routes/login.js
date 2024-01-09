@@ -3,6 +3,7 @@ import sqlite3 from "sqlite3";
 
 const loginRouter = Router();
 
+//Login only by email
 loginRouter.post("/", (req, res) => {
     const { email } = req.body;
 
@@ -20,7 +21,6 @@ loginRouter.post("/", (req, res) => {
         }
       });
 
-    // Cierra la conexión de la base de datos cuando hayas terminado
     db.close(); 
 })
 
